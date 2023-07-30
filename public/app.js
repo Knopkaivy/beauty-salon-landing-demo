@@ -1,6 +1,6 @@
 const menuBtn = document.getElementById('menu');
 const menuCloseBtn = document.getElementById('close');
-const menuOverlay = document.querySelector('.menu__overlay');
+const menuOverlay = document.querySelector('.menu__overlayOuter');
 menuBtn.addEventListener('click', () => {
   menuOverlay.classList.add('menu__overlay--open');
 });

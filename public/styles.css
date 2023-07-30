@@ -12,6 +12,9 @@
   --m-p-spacing-lg: 2.4rem;
   --m-p-spacing-xl: 8rem;
 }
+::-webkit-scrollbar {
+  display: none;
+}
 * {
   box-sizing: border-box;
 }
@@ -24,6 +27,7 @@
 *:focus {
   outline: 4px solid var(--color-red);
 }
+
 html,
 body {
   width: 100vw;
@@ -43,13 +47,14 @@ body {
   padding: var(--m-p-spacing);
   box-sizing: border-box;
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 /* HEADER */
 .navbar {
   width: 100vw;
   min-width: 400px;
   height: 9.6rem;
+  min-height: 40px;
   position: fixed;
   top: 0;
   left: 0;
@@ -85,14 +90,15 @@ ul {
   display: flex;
   padding: 0;
 }
-.navbar__optionList {
+.navbar__optionList,
+.navbar__iconList {
   gap: var(--m-p-spacing-xl);
   align-items: center;
   color: var(--color-black-2);
   font-size: 1.6rem;
 }
-.navbar li {
-  min-width: 4rem;
+.navbar__iconList {
+  gap: var(--m-p-spacing-lg);
 }
 svg {
   fill: inherit;
@@ -102,7 +108,7 @@ svg {
   display: none;
   margin-right: var(--m-p-spacing-lg);
 }
-.menu__overlay {
+.menu__overlayOuter {
   position: absolute;
   top: 0;
   left: 100vw;
@@ -110,13 +116,16 @@ svg {
   height: 100vh;
   background-color: var(--color-white);
   z-index: 5;
+  display: none;
+  transition: all 2s ease 0.1s;
+}
+.menu__overlayInner {
+  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4rem;
   padding: 4rem;
   font-size: 2.4rem;
-  display: none;
-  transition: all 2s ease 0.1s;
 }
 .menu__overlay--open {
   transform: translateX(-100vw);
@@ -372,10 +381,13 @@ a span {
     background-color: var(--color-green);
   }
   .navbar {
-    gap: var(--m-p-spacing-lg);
+    gap: var(--m-p-spacing);
+  }
+  .logo {
+    margin-left: 0;
   }
   .navbar__optionList {
-    gap: var(--m-p-spacing-lg);
+    gap: var(--m-p-spacing);
   }
   .main__container {
     margin-top: 9.6rem;
@@ -415,14 +427,14 @@ a span {
   .logo {
     margin-left: var(--m-p-spacing-lg);
   }
-  .navbar__listItem--desktop {
+  .navbar__optionList {
     display: none;
   }
   .menu__btn {
     display: block;
   }
-  .menu__overlay {
-    display: flex;
+  .menu__overlayOuter {
+    display: block;
   }
   aside {
     display: none;
