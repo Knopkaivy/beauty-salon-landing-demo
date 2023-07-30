@@ -13,19 +13,21 @@
     <title>BRW Bar Landing - Demo</title>
   </head>
   <body>
-    <nav class="navbar">
-      <a href="#">
+    <header class="navbar">
+      <a href="./">
         <div class="logo">
           <p>BRW</p>
           <p>BAR inc.</p>
         </div>
       </a>
-      <ul class="navbar__optionList--desktop">
+      <ul class="navbar__optionList">
         <li><a href="#" class="navbar__listItem--desktop">ABOUT</a></li>
         <li><a href="#" class="navbar__listItem--desktop">TREATMENTS</a></li>
         <li><a href="#" class="navbar__listItem--desktop">PACKAGES</a></li>
         <li><a href="#" class="navbar__listItem--desktop">CONTACT</a></li>
-        <li><a href="#" class="navbar__listItem--desktop">Log in</a></li>
+        <li>
+          <a href="#" role="button" class="navbar__listItem--desktop">Log in</a>
+        </li>
         <li>
           <a href="#"
             ><svg
@@ -42,7 +44,7 @@
           ></a>
         </li>
         <li>
-          <a href="#" id="menu" role="button" class="btn__menu"
+          <a href="#" id="menu" role="button" class="menu__btn"
             ><svg
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
@@ -57,10 +59,10 @@
           ></a>
         </li>
       </ul>
-    </nav>
+    </header>
     <div class="menu__overlay">
-      <nav class="navbar--mobile">
-        <ul class="navbar__optionList--mobileHeader">
+      <header class="menu__header">
+        <ul class="menu__headerList">
           <li><a href="#">Log in</a></li>
           <li>
             <a href="#" id="close"
@@ -78,9 +80,9 @@
             ></a>
           </li>
         </ul>
-      </nav>
+      </header>
       <div>
-        <ul class="navbar__optionList--mobile">
+        <ul class="menu__main">
           <li><a href="#">ABOUT</a></li>
           <li><a href="#">TREATMENTS</a></li>
           <li><a href="#">PACKAGES</a></li>
@@ -88,7 +90,7 @@
         </ul>
       </div>
       <div>
-        <ul class="socialList--mobile">
+        <ul class="menu__socialLinks">
           <li>
             <a href="#"
               ><svg
@@ -145,7 +147,7 @@
       </div>
     </div>
     <aside>
-      <ul class="socialList--desktop">
+      <ul class="socialLinks">
         <li>
           <a href="#"
             ><svg
@@ -200,27 +202,26 @@
         </li>
       </ul>
     </aside>
-    <div class="container">
+    <main class="main__container">
       <section class="landing">
-        <div class="landing__left"></div>
         <div class="landing__right"></div>
         <div class="image__containerOuter">
           <div class="image__containerInner">
             <img src="./face.webp" alt="woman's face" class="image" />
           </div>
         </div>
-        <div class="header__containerOuter">
-          <div class="header__containerInner">
-            <div class="overlay__container">
-              <div class="overlay__header"></div>
+        <div class="heading__containerOuter">
+          <div class="heading__containerInner">
+            <div class="headingOverlay__container">
+              <div class="headingOverlay__header"></div>
               <h1>
                 WE CHANGE THE WORLD
                 <br />
                 <span>ONE EYEBROW AT A TIME</span>
               </h1>
             </div>
-            <div class="overlay__container">
-              <div class="overlay__link"></div>
+            <div class="headingOverlay__container">
+              <div class="headingOverlay__link"></div>
               <p>
                 <a href="#"
                   >Book an Appointment
@@ -241,9 +242,8 @@
             </div>
           </div>
         </div>
-        <div class="svg__containerOuter">
-          <div class="svg__containerInner">
-            <!-- COPIED ELEMENT -->
+        <div class="decorationSlashLines__containerOuter">
+          <div class="decorationSlashLines__containerInner">
             <svg
               preserveAspectRatio="xMidYMid meet"
               data-bbox="9.274 85.243 183.282 31.168"
@@ -576,9 +576,9 @@
           </div>
         </div>
       </section>
-    </div>
-    <div class="btn__container">
-      <button type="button" class="btn">
+    </main>
+    <div class="support__container">
+      <button type="button" class="support__btn">
         <svg
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
