@@ -31,6 +31,7 @@ html {
   padding: 0;
 }
 body {
+  min-width: 400px;
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
   line-height: 1.6;
@@ -49,6 +50,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: var(--m-p-spacing-xl);
   background-color: var(--color-white);
   z-index: 4;
 }
@@ -75,13 +77,55 @@ body {
 ul {
   list-style: none;
   display: flex;
+  padding: 0;
+}
+.navbar__optionList--desktop {
   gap: var(--m-p-spacing-xl);
   align-items: center;
-  padding: 0;
   color: var(--color-black-2);
 }
 .navbar li {
   min-width: 4rem;
+}
+.btn__menu {
+  display: none;
+  margin-right: var(--m-p-spacing-lg);
+}
+.menu__overlay {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-white);
+  z-index: 5;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  padding: 4rem;
+  font-size: 2.4rem;
+  display: none;
+  transition: all 2s ease 0.1s;
+}
+.menu__overlay--open {
+  transform: translateX(-100%);
+}
+.navbar--mobile {
+  width: 100%;
+}
+.navbar__optionList--mobileHeader {
+  width: 100%;
+  justify-content: space-between;
+}
+.navbar__optionList--mobile {
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+}
+.socialList--mobile {
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
 }
 aside {
   width: 9.6rem;
@@ -95,10 +139,11 @@ aside {
   align-items: center;
   z-index: 3;
 }
-aside ul {
+.socialList--desktop {
   flex-direction: column;
   gap: 2rem;
 }
+
 .container {
   width: 100%;
   height: 100%;
@@ -206,7 +251,7 @@ h1 span {
 a {
   text-decoration: none;
   color: inherit;
-  font-size: 1.4rem;
+  font-size: inherit;
   padding-left: 0.5rem;
 }
 a:hover {
@@ -249,7 +294,7 @@ svg {
   position: fixed;
   bottom: var(--m-p-spacing-lg);
   right: var(--m-p-spacing-lg);
-  z-index: 4;
+  z-index: 8;
 }
 .btn {
   width: 6.4rem;
@@ -315,6 +360,12 @@ svg {
   body {
     background-color: var(--color-green);
   }
+  .navbar {
+    gap: var(--m-p-spacing-lg);
+  }
+  .navbar__optionList--desktop {
+    gap: var(--m-p-spacing-lg);
+  }
   .container {
     margin-top: 6rem;
   }
@@ -337,7 +388,6 @@ svg {
   }
   .svg__containerOuter {
     width: 100%;
-    /* height: 10vh; */
     position: absolute;
     bottom: 20vh;
     left: 0;
@@ -347,6 +397,24 @@ svg {
 @media only screen and (max-width: 600px) {
   html {
     font-size: 37.5%;
+  }
+  .navbar {
+    gap: 0;
+  }
+  .logo {
+    margin-left: var(--m-p-spacing-lg);
+  }
+  .navbar__listItem--desktop {
+    display: none;
+  }
+  .btn__menu {
+    display: block;
+  }
+  .menu__overlay {
+    display: flex;
+  }
+  aside {
+    display: none;
   }
   .image__containerOuter,
   .header__containerOuter {
