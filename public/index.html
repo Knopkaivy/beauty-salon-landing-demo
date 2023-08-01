@@ -13,9 +13,9 @@
     <title>BRW Bar Landing - Demo</title>
   </head>
   <body>
-    <header class="navbar">
+    <nav class="navbar">
       <a href="./">
-        <div class="logo">
+        <div class="logo" aria-label="Company Logo">
           <div>BRW</div>
           <div class="logo__inner">
             <p>BAR</p>
@@ -23,7 +23,7 @@
           </div>
         </div>
       </a>
-      <ul class="navbar__optionList">
+      <ul class="navbar__optionList" aria-label="Main Navigation">
         <li><a href="#">ABOUT</a></li>
         <li><a href="#">TREATMENTS</a></li>
         <li><a href="#">PACKAGES</a></li>
@@ -32,7 +32,7 @@
           <a href="#" role="button">Log in</a>
         </li>
       </ul>
-      <ul class="navbar__iconList">
+      <ul class="navbar__iconList" aria-label="Secondary Navigation">
         <li>
           <a href="#"
             ><svg
@@ -64,11 +64,11 @@
           ></a>
         </li>
       </ul>
-    </header>
+    </nav>
     <div class="menu__overlayOuter">
       <div class="menu__overlayInner">
-        <header class="menu__header">
-          <ul class="menu__headerList">
+        <nav class="menu__header">
+          <ul class="menu__headerList" aria-label="Secondary Navigation">
             <li><a href="#">Log in</a></li>
             <li>
               <a href="#" id="close" class="menuClose__btn"
@@ -86,9 +86,9 @@
               ></a>
             </li>
           </ul>
-        </header>
+        </nav>
         <div>
-          <ul class="menu__main">
+          <ul class="menu__main" aria-label="Main Navigation">
             <li><a href="#">ABOUT</a></li>
             <li><a href="#">TREATMENTS</a></li>
             <li><a href="#">PACKAGES</a></li>
@@ -96,7 +96,7 @@
           </ul>
         </div>
         <div>
-          <ul class="menu__socialLinks">
+          <ul class="menu__socialLinks" aria-label="Links to social media">
             <li>
               <a href="#"
                 ><svg
@@ -154,7 +154,7 @@
       </div>
     </div>
     <aside>
-      <ul class="socialLinks">
+      <ul class="socialLinks" aria-label="Links to social media">
         <li>
           <a href="#"
             ><svg
@@ -230,9 +230,9 @@
             <div class="headingOverlay__container">
               <div class="headingOverlay__link"></div>
               <p>
-                <a href="#" class="book__link"
+                <a href="#" class="book__link" title="Book Appointment"
                   >Book an Appointment
-                  <span>
+                  <span aria-hidden="true">
                     <svg
                       version="1.1"
                       xmlns="http://www.w3.org/2000/svg"
@@ -249,7 +249,7 @@
             </div>
           </div>
         </div>
-        <div class="decorationSlashLines__containerOuter">
+        <div class="decorationSlashLines__containerOuter" aria-hidden="true">
           <div class="decorationSlashLines__containerInner">
             <svg
               preserveAspectRatio="xMidYMid meet"
@@ -585,7 +585,11 @@
       </section>
     </main>
     <div class="support__container">
-      <button type="button" class="support__btn">
+      <button
+        type="button"
+        class="support__btn"
+        aria-label="Chat With Our Support Team"
+      >
         <svg
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
