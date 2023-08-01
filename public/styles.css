@@ -87,7 +87,6 @@ body {
 .logo__inner p {
   margin: 0;
   line-height: 2rem;
-  /* height: 2rem; */
   font-size: 2rem;
   width: 3rem;
 }
@@ -116,7 +115,6 @@ a {
   text-decoration: none;
   color: inherit;
   font-size: inherit;
-  /* padding-left: 0.5rem; */
 }
 a:hover {
   color: var(--color-grey-2);
@@ -140,7 +138,6 @@ svg {
 /* MOBILE MENU OVERLAY */
 .menu__btn {
   display: none;
-  /* margin-right: var(--m-p-spacing-lg); */
 }
 .menu__overlayOuter {
   position: absolute;
@@ -236,7 +233,6 @@ aside {
     'left left left left right right right right'
     'left left left left right right right right';
 }
-
 .landing__right {
   background-color: var(--color-green);
   grid-area: right;
@@ -250,10 +246,10 @@ aside {
   z-index: 1;
   padding: var(--m-p-spacing);
   opacity: 0;
-  transition: all 0.6s ease;
+  /* transition: all 0.6s ease; */
   animation: blockEntry 2.5s ease-in-out 1s 1 normal forwards;
 }
-.image__containerOuter:hover {
+.image__containerOuter:hover img {
   opacity: 0.8;
 }
 .image__containerInner {
@@ -265,6 +261,7 @@ aside {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: all 0.2s ease;
 }
 .heading__containerOuter {
   background-color: var(--color-white);
