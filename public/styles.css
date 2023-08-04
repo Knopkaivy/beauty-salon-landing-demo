@@ -22,7 +22,7 @@
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  /* box-sizing: inherit; */
 }
 *:focus {
   outline: 4px solid var(--color-red);
@@ -32,27 +32,27 @@ html,
 body {
   width: 100vw;
   height: 100vh;
+  margin: 0;
 }
 html {
   font-size: 62.5%;
-  margin: 0;
   padding: 0;
 }
 body {
-  min-width: 400px;
+  /* min-width: 400px; */
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
   line-height: 1.6;
-  margin: 0;
+  /* margin: 0; */
   padding: var(--m-p-spacing);
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 /* HEADER */
 .navbar {
   width: 100vw;
-  min-width: 400px;
+  /* min-width: 400px; */
   height: 10.4rem;
   position: fixed;
   top: 0;
@@ -80,41 +80,65 @@ body {
   border: 4px solid var(--color-black-1);
   box-sizing: border-box;
 }
-.logo__inner {
+.logo:hover {
+  color: var(--color-black-1);
+}
+.logo__textContainer {
   display: flex;
   flex-direction: column;
 }
-.logo__inner p {
+.logo__text {
   margin: 0;
   line-height: 2rem;
   font-size: 2rem;
   width: 3rem;
 }
 
-ul {
+.nav {
   list-style: none;
   display: flex;
   padding: 0;
 }
-.navbar__optionList,
-.navbar__iconList {
+.nav--main,
+.nav--mobile {
   gap: var(--m-p-spacing-xl);
   align-items: center;
   color: var(--color-black-2);
   font-size: 1.6rem;
   padding: 0.5rem;
 }
-.navbar__iconList {
+.nav--mobile {
   gap: var(--m-p-spacing-lg);
 }
-.navbar__optionList a,
-.navbar__iconList a {
+.nav__item {
   padding: 0.5rem;
 }
+.nav__link {
+  padding: 0.5rem;
+}
+.menu__btn--close,
+.nav__link--icon {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .menu__btn--close,
+.nav__icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+} */
 a {
   text-decoration: none;
   color: inherit;
   font-size: inherit;
+}
+a:visited {
+  color: inherit;
 }
 a:hover {
   color: var(--color-grey-2);
@@ -123,18 +147,14 @@ a:hover {
 a:hover svg {
   fill: var(--color-grey-2);
 }
-a:hover div {
-  color: var(--color-black-1);
-}
-a:visited {
-  color: inherit;
-}
-a span {
+
+/* a span {
   margin-left: 1rem;
-}
+} */
 svg {
   fill: inherit;
 }
+
 /* MOBILE MENU OVERLAY */
 .menu__btn {
   display: none;
@@ -142,7 +162,7 @@ svg {
 .menu__overlayOuter {
   position: absolute;
   top: 0;
-  left: 100vw;
+  left: 120vw;
   width: 100vw;
   height: 100vh;
   background-color: var(--color-white);
@@ -159,41 +179,33 @@ svg {
   font-size: 2.4rem;
 }
 .menu__overlay--open {
-  transform: translateX(-100vw);
+  transform: translateX(-120vw);
 }
 .menu__header {
   width: 100%;
 }
-.menu__headerList {
+.menu__nav--header {
   width: 100%;
   justify-content: space-between;
   align-items: center;
 }
-.menu__headerList a {
+/* .menu__navItem,
+.aside__navItem {
   padding: 0.5rem;
-}
-.menu__main {
+} */
+.menu__nav--main {
   flex-direction: column;
   gap: 4rem;
   align-items: center;
 }
-.menu__main a {
-  padding: 0.5rem;
-}
-.menu__socialLinks {
+
+.menu__nav--social {
   gap: 4rem;
   justify-content: center;
   align-items: center;
 }
-.menuClose__btn,
-.menu__socialLinks a {
-  padding: 0.5rem;
-  display: block;
-  width: 30px;
-  height: 30px;
-  text-align: center;
-}
-aside {
+
+.aside {
   width: 9.6rem;
   height: 100vh;
   position: fixed;
@@ -205,17 +217,13 @@ aside {
   align-items: center;
   z-index: 3;
 }
-.socialLinks {
+.aside__nav {
   flex-direction: column;
   gap: 2rem;
 }
-.socialLinks a {
-  padding: 0.5rem;
-  display: block;
-  height: 30px;
-}
+
 /* MAIN */
-.main__container {
+.main {
   width: 100%;
   height: 100%;
 }
@@ -257,7 +265,7 @@ aside {
   height: 100%;
   overflow: hidden;
 }
-.image {
+.image__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -284,15 +292,14 @@ aside {
   justify-content: space-between;
   overflow: hidden;
 }
-.heading__containerInner p {
+.heading__bookAppointment {
   padding-bottom: var(--m-p-spacing);
   font-size: 1.4rem;
 }
-.headingOverlay__container {
+.heading__overlayContainer {
   position: relative;
 }
-.headingOverlay__header,
-.headingOverlay__link {
+.heading__overlay {
   width: 100%;
   height: 100%;
   background-color: var(--color-grey-1);
@@ -301,13 +308,13 @@ aside {
   left: 0;
   z-index: 3;
 }
-.headingOverlay__header {
+.heading__overlay--header {
   animation: textReveal 2s ease 3.7s 1 normal forwards;
 }
-.headingOverlay__link {
+.heading__overlay--link {
   animation: textReveal 2s ease 4.7s 1 normal forwards;
 }
-h1 {
+.heading {
   font-size: 6rem;
   margin: 0;
   color: var(--color-grey-2);
@@ -317,10 +324,10 @@ h1 {
   line-height: 6.4rem;
   max-width: 32rem;
 }
-h1 span {
+.heading__sub {
   color: var(--color-black-1);
 }
-.book__link {
+.bookAppointment__link {
   padding: 0.5rem;
   line-height: 40px;
   box-sizing: border-box;
@@ -421,10 +428,10 @@ h1 span {
   .logo {
     margin-left: 0;
   }
-  .navbar__optionList {
+  .nav--main {
     gap: var(--m-p-spacing);
   }
-  .main__container {
+  .main {
     margin-top: 10rem;
   }
   .landing {
@@ -460,7 +467,7 @@ h1 span {
     gap: 0;
   }
 
-  .navbar__optionList {
+  .nav--main {
     display: none;
   }
   .menu__btn {
@@ -469,7 +476,7 @@ h1 span {
   .menu__overlayOuter {
     display: block;
   }
-  aside {
+  .aside {
     display: none;
   }
   .image__containerOuter,

@@ -17,24 +17,32 @@
       <a href="./">
         <div class="logo" aria-label="Company Logo">
           <div>BRW</div>
-          <div class="logo__inner">
-            <p>BAR</p>
-            <p>inc.</p>
+          <div class="logo__textContainer">
+            <p class="logo__text">BAR</p>
+            <p class="logo__text">inc.</p>
           </div>
         </div>
       </a>
-      <ul class="navbar__optionList" aria-label="Main Navigation">
-        <li><a href="#">ABOUT</a></li>
-        <li><a href="#">TREATMENTS</a></li>
-        <li><a href="#">PACKAGES</a></li>
-        <li><a href="#">CONTACT</a></li>
-        <li>
-          <a href="#" role="button">Log in</a>
+      <ul class="nav nav--main" aria-label="Main Navigation">
+        <li class="nav__item nav__item--main">
+          <a href="#" class="nav__link">ABOUT</a>
+        </li>
+        <li class="nav__item nav__item--main">
+          <a href="#" class="nav__link">TREATMENTS</a>
+        </li>
+        <li class="nav__item nav__item--main">
+          <a href="#" class="nav__link">PACKAGES</a>
+        </li>
+        <li class="nav__item nav__item--main">
+          <a href="#" class="nav__link">CONTACT</a>
+        </li>
+        <li class="nav__item nav__item--main">
+          <a href="#" class="nav__link">Log in</a>
         </li>
       </ul>
-      <ul class="navbar__iconList" aria-label="Mobile Navigation">
-        <li>
-          <a href="#"
+      <ul class="nav nav--mobile" aria-label="Mobile Navigation">
+        <li class="nav__item nav__item--mobile">
+          <a href="#" class="nav__link--icon"
             ><svg
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +56,7 @@
               ></path></svg
           ></a>
         </li>
-        <li>
+        <li class="nav__item nav__item--mobile">
           <a
             href="#"
             id="menu"
@@ -73,10 +81,12 @@
     <div class="menu__overlayOuter">
       <div class="menu__overlayInner">
         <nav class="menu__header">
-          <ul class="menu__headerList" aria-label="Menu Navigation">
-            <li><a href="#">Log in</a></li>
-            <li>
-              <a href="#" id="close" class="menuClose__btn"
+          <ul class="nav menu__nav--header" aria-label="Menu Navigation">
+            <li class="nav__item menu__navItem">
+              <a href="#" class="nav__link">Log in</a>
+            </li>
+            <li class="nav__item menu__navItem">
+              <a href="#" id="close" class="menu__btn--close"
                 ><svg
                   version="1.1"
                   xmlns="http://www.w3.org/2000/svg"
@@ -93,17 +103,25 @@
           </ul>
         </nav>
         <div>
-          <ul class="menu__main" aria-label="Main Navigation">
-            <li><a href="#">ABOUT</a></li>
-            <li><a href="#">TREATMENTS</a></li>
-            <li><a href="#">PACKAGES</a></li>
-            <li><a href="#">CONTACT</a></li>
+          <ul class="nav menu__nav--main" aria-label="Main Navigation">
+            <li class="nav__item menu__navItem">
+              <a href="#" class="nav__link">ABOUT</a>
+            </li>
+            <li class="nav__item menu__navItem">
+              <a href="#" class="nav__link">TREATMENTS</a>
+            </li>
+            <li class="nav__item menu__navItem">
+              <a href="#" class="nav__link">PACKAGES</a>
+            </li>
+            <li class="nav__item menu__navItem">
+              <a href="#" class="nav__link">CONTACT</a>
+            </li>
           </ul>
         </div>
         <div>
-          <ul class="menu__socialLinks" aria-label="Links to social media">
-            <li>
-              <a href="#"
+          <ul class="nav menu__nav--social" aria-label="Links to social media">
+            <li class="nav__item menu__navItem nav__icon">
+              <a href="#" class="nav__link--icon"
                 ><svg
                   version="1.1"
                   xmlns="http://www.w3.org/2000/svg"
@@ -117,8 +135,8 @@
                   ></path></svg
               ></a>
             </li>
-            <li>
-              <a href="#"
+            <li class="nav__item menu__navItem nav__icon">
+              <a href="#" class="nav__link--icon"
                 ><svg
                   version="1.1"
                   xmlns="http://www.w3.org/2000/svg"
@@ -139,8 +157,8 @@
                   ></path></svg
               ></a>
             </li>
-            <li>
-              <a href="#"
+            <li class="nav__item menu__navItem nav__icon">
+              <a href="#" class="nav__link--icon"
                 ><svg
                   version="1.1"
                   xmlns="http://www.w3.org/2000/svg"
@@ -158,10 +176,10 @@
         </div>
       </div>
     </div>
-    <aside>
-      <ul class="socialLinks" aria-label="Links to social media">
-        <li>
-          <a href="#"
+    <aside class="aside">
+      <ul class="nav aside__nav" aria-label="Links to social media">
+        <li class="nav__item aside__navItem nav__icon">
+          <a href="#" class="nav__link--icon"
             ><svg
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
@@ -175,8 +193,8 @@
               ></path></svg
           ></a>
         </li>
-        <li>
-          <a href="#"
+        <li class="nav__item aside__navItem nav__icon">
+          <a href="#" class="nav__link--icon"
             ><svg
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
@@ -197,8 +215,8 @@
               ></path></svg
           ></a>
         </li>
-        <li>
-          <a href="#"
+        <li class="nav__item aside__navItem nav__icon">
+          <a href="#" class="nav__link--icon"
             ><svg
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
@@ -214,30 +232,31 @@
         </li>
       </ul>
     </aside>
-    <main class="main__container">
+    <main class="main">
       <section class="landing">
         <div class="landing__right"></div>
         <div class="image__containerOuter">
           <div class="image__containerInner">
-            <img src="./face.webp" alt="woman's face" class="image" />
+            <img src="./face.webp" alt="woman's face" class="image__img" />
           </div>
         </div>
         <div class="heading__containerOuter">
           <div class="heading__containerInner">
-            <div class="headingOverlay__container">
-              <div class="headingOverlay__header"></div>
-              <h1>
+            <div class="heading__overlayContainer">
+              <div class="heading__overlay heading__overlay--header"></div>
+              <h1 class="heading">
                 WE CHANGE THE WORLD
                 <br />
-                <span>ONE EYEBROW AT A TIME</span>
+                <span class="heading__sub">ONE EYEBROW AT A TIME</span>
               </h1>
             </div>
-            <div class="headingOverlay__container">
-              <div class="headingOverlay__link"></div>
-              <p>
-                <a href="#" class="book__link"
+            <div class="heading__overlayContainer">
+              <div class="heading__overlay heading__overlay--link"></div>
+              <!-- TODO BEM -->
+              <p class="heading__bookAppointment">
+                <a href="#" class="bookAppointment__link"
                   >Book an Appointment
-                  <span aria-hidden="true">
+                  <span aria-hidden="true" class="bookAppointment__link--icon">
                     <svg
                       version="1.1"
                       xmlns="http://www.w3.org/2000/svg"
