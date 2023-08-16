@@ -132,12 +132,12 @@ a:hover {
   color: var(--color-grey-2);
 }
 
-a:hover svg {
-  fill: var(--color-grey-2);
-}
-
 svg {
   fill: inherit;
+}
+
+a:hover svg {
+  fill: var(--color-grey-2);
 }
 
 /* MOBILE MENU OVERLAY */
@@ -237,6 +237,9 @@ svg {
   padding: var(--m-p-spacing);
   opacity: 0;
   animation: blockEntry 2.5s ease-in-out 1s 1 normal forwards;
+}
+img {
+  will-change: opacity;
 }
 .image__containerOuter:hover img {
   opacity: 0.8;
@@ -421,7 +424,6 @@ svg {
   }
   .image__containerOuter {
     width: 80vw;
-    /* max-height: 60vh; */
     z-index: 2;
   }
   .heading__containerOuter {
@@ -446,7 +448,6 @@ svg {
   .navbar {
     gap: 0;
   }
-
   .nav--main {
     display: none;
   }
